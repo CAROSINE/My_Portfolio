@@ -1,0 +1,152 @@
+.about-section {
+  position: relative;
+  padding: 120px 8%;
+  background: #05070a;
+  border-top: 1px solid rgba(89, 255, 180, 0.05);
+}
+
+.about-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 70px;
+
+  color: #667581;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.section-label span {
+  color: #59ffb4;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: start;
+}
+
+.about-kicker {
+  margin-bottom: 18px;
+
+  color: #596875;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.about-heading h2 {
+  color: #f2f7fb;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.about-heading h2 span {
+  color: #59ffb4;
+}
+
+.quote-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 45px;
+  padding: 22px;
+
+  border: 1px solid rgba(89, 255, 180, 0.12);
+  border-radius: 14px;
+
+  background: rgba(89, 255, 180, 0.025);
+}
+
+.quote-icon {
+  font-size: 24px;
+}
+
+.quote-text {
+  margin-bottom: 4px;
+
+  color: #dfe9ef;
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.quote-caption {
+  color: #657480;
+  font-size: 12px;
+}
+
+.about-content {
+  padding-top: 20px;
+}
+
+.about-content > p {
+  margin-bottom: 24px;
+
+  color: #8996a2;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+
+  margin-top: 45px;
+}
+
+.stat-card {
+  padding: 20px;
+
+  border: 1px solid #19232c;
+  border-radius: 12px;
+  background: #080d12;
+}
+
+.stat-number {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #59ffb4;
+  font-family: "Courier New", monospace;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.stat-label {
+  color: #687783;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+@media (max-width: 850px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 90px 6%;
+  }
+
+  .about-heading h2 {
+    letter-spacing: -2px;
+  }
+}
