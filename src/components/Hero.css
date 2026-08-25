@@ -1,0 +1,258 @@
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 110px 8% 70px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(0, 255, 170, 0.08), transparent 28%),
+    radial-gradient(circle at 20% 70%, rgba(0, 180, 255, 0.06), transparent 25%),
+    #05070a;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: linear-gradient(to bottom, black 20%, transparent 90%);
+}
+
+.hero-content {
+  max-width: 720px;
+  position: relative;
+  z-index: 2;
+}
+
+.status-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0, 255, 170, 0.2);
+  border-radius: 999px;
+  background: rgba(0, 255, 170, 0.05);
+  color: #61ffbc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #59ffb4;
+  box-shadow: 0 0 12px #59ffb4;
+  animation: pulse 1.8s infinite;
+}
+
+.hero-tag {
+  margin-bottom: 18px;
+  color: #6d7c8c;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #f2f7fb;
+  font-size: clamp(3rem, 7vw, 6.2rem);
+  line-height: 0.98;
+  letter-spacing: -4px;
+}
+
+.hero h1 span {
+  color: #59ffb4;
+  text-shadow: 0 0 30px rgba(89, 255, 180, 0.15);
+}
+
+.hero-description {
+  max-width: 650px;
+  margin: 30px 0;
+  color: #8e9aa7;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 155px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.btn-primary {
+  color: #04110b;
+  background: #59ffb4;
+  box-shadow: 0 0 25px rgba(89, 255, 180, 0.14);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(89, 255, 180, 0.25);
+}
+
+.btn-secondary {
+  color: #dfe8ef;
+  border: 1px solid #25313c;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  border-color: #59ffb4;
+  color: #59ffb4;
+}
+
+.terminal-card {
+  width: min(440px, 100%);
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(89, 255, 180, 0.14);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(9, 13, 17, 0.88);
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(89, 255, 180, 0.04);
+  backdrop-filter: blur(14px);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #1c252e;
+  background: #0b1015;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #33404b;
+}
+
+.terminal-title {
+  color: #71808d;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.terminal-body {
+  padding: 24px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.terminal-body p {
+  margin: 0 0 10px;
+  color: #b7c2cc;
+}
+
+.prompt {
+  color: #59ffb4;
+}
+
+.terminal-output {
+  color: #6f7e8b !important;
+  padding-left: 18px;
+}
+
+.cursor-line {
+  color: #59ffb4 !important;
+  animation: blink 1s steps(1) infinite;
+}
+
+.scroll-indicator {
+  position: absolute;
+  left: 8%;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #53616e;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.scroll-indicator span {
+  width: 30px;
+  height: 1px;
+  background: #59ffb4;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 130px;
+  }
+
+  .terminal-card {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 100px 6% 50px;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+}
