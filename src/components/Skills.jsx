@@ -13,6 +13,7 @@ const skillGroups = [
       "Vulnerability Analysis",
       "Linux",
       "Security Research",
+      "CTF",
     ],
   },
   {
