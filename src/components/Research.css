@@ -1,0 +1,291 @@
+.research-section {
+  position: relative;
+  padding: 120px 8%;
+  background:
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(89, 255, 180, 0.035),
+      transparent 25%
+    ),
+    #05070a;
+  border-top: 1px solid rgba(89, 255, 180, 0.05);
+}
+
+.research-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.research-header {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 80px;
+  align-items: end;
+
+  margin-bottom: 65px;
+}
+
+.research-kicker {
+  margin-bottom: 16px;
+
+  color: #596875;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.research-header h2 {
+  margin: 0;
+
+  color: #f2f7fb;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.research-header h2 span {
+  color: #59ffb4;
+}
+
+.research-intro {
+  padding-bottom: 3px;
+}
+
+.research-intro > p {
+  max-width: 500px;
+
+  color: #7f8d99;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.research-terminal {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  margin-top: 25px;
+  padding: 15px 17px;
+
+  border-left: 2px solid #59ffb4;
+
+  background: rgba(89, 255, 180, 0.025);
+
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+}
+
+.terminal-prompt {
+  color: #59ffb4;
+}
+
+.research-terminal span:nth-child(2) {
+  color: #8796a2;
+}
+
+.research-terminal strong {
+  color: #d0dbe2;
+  font-weight: 500;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.research-card {
+  min-height: 340px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 26px;
+
+  border: 1px solid #19242c;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(89, 255, 180, 0.03),
+      rgba(255, 255, 255, 0.008)
+    ),
+    #080d12;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(89, 255, 180, 0.2);
+
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.3);
+}
+
+.research-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.research-number {
+  color: #59ffb4;
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.research-label {
+  color: #53636e;
+
+  font-family: "Courier New", monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.research-card-body {
+  margin: 35px 0;
+}
+
+.research-card-body h3 {
+  margin-bottom: 14px;
+
+  color: #eef4f8;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+}
+
+.research-card-body p {
+  color: #778691;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.research-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 24px;
+}
+
+.research-stack span {
+  padding: 8px 10px;
+
+  border: 1px solid #202c35;
+  border-radius: 8px;
+
+  color: #9eabb4;
+  background: rgba(255, 255, 255, 0.015);
+
+  font-size: 10px;
+}
+
+.research-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid #172129;
+
+  color: #50616c;
+
+  font-family: "Courier New", monospace;
+  font-size: 8px;
+  letter-spacing: 0.8px;
+}
+
+.research-card-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.research-card-footer i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+
+  background: #59ffb4;
+  box-shadow: 0 0 8px rgba(89, 255, 180, 0.5);
+}
+
+.research-card-footer a {
+  color: #59ffb4;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.research-card-footer a:hover {
+  color: #f2f7fb;
+}
+
+.research-quote {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 30px;
+  padding: 22px;
+
+  border: 1px solid rgba(89, 255, 180, 0.1);
+  border-radius: 12px;
+
+  background: rgba(89, 255, 180, 0.02);
+}
+
+.research-quote-symbol {
+  font-size: 22px;
+}
+
+.research-quote p {
+  margin-bottom: 4px;
+
+  color: #dfe9ef;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.research-quote span {
+  color: #65747f;
+  font-size: 11px;
+}
+
+@media (max-width: 950px) {
+  .research-header {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .research-section {
+    padding: 90px 6%;
+  }
+
+  .research-header h2 {
+    letter-spacing: -2px;
+  }
+
+  .research-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
