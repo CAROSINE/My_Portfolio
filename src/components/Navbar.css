@@ -21,52 +21,121 @@
   -webkit-backdrop-filter: blur(18px);
 }
 
+/* ========================================
+   CAROSINE IDENTITY PANEL
+======================================== */
+
+.identity-panel {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-width: 270px;
+  height: 76px;
+
+  isolation: isolate;
+}
+
+.identity-panel::after {
+  content: "";
+
+  position: absolute;
+  left: -35px;
+  right: -35px;
+  top: 50%;
+
+  height: 74px;
+
+  transform: translateY(-50%);
+
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(89, 255, 180, 0.035),
+      transparent 65%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.6s ease;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.navbar-top .identity-panel::after {
+  opacity: 1;
+}
+
 .navbar-logo {
+  position: relative;
+
   display: inline-flex;
   align-items: center;
   gap: 11px;
 
   color: inherit;
   text-decoration: none;
+
+  z-index: 2;
 }
 
 .logo-mark {
+  position: relative;
+
   display: grid;
   place-items: center;
 
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
 
-  border: 1px solid rgba(89, 255, 180, 0.28);
-  border-radius: 10px;
+  border: 1px solid rgba(89, 255, 180, 0.32);
+  border-radius: 11px;
 
   color: #59ffb4;
-  background: rgba(89, 255, 180, 0.05);
+  background: rgba(5, 10, 12, 0.9);
 
-  font-size: 18px;
+  font-size: 19px;
 
-  box-shadow: 0 0 20px rgba(89, 255, 180, 0.05);
+  box-shadow:
+    0 0 18px rgba(89, 255, 180, 0.06),
+    inset 0 0 14px rgba(89, 255, 180, 0.03);
+
+  z-index: 3;
 }
 
 .logo-text {
   display: flex;
   flex-direction: column;
   gap: 2px;
+
+  position: relative;
+  z-index: 3;
 }
 
 .logo-name {
   color: #f2f7fb;
+
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 1.8px;
 }
 
 .logo-sub {
-  color: #596876;
+  color: #f2f7fb;
   font-family: "Courier New", monospace;
-  font-size: 8px;
-  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
 }
+
+/* ========================================
+   DESKTOP NAVIGATION
+======================================== */
 
 .navbar-links {
   display: flex;
@@ -110,6 +179,10 @@
   color: #59ffb4;
 }
 
+/* ========================================
+   STATUS + MENU
+======================================== */
+
 .navbar-right {
   display: flex;
   align-items: center;
@@ -138,9 +211,11 @@
 .navbar-status-dot {
   width: 6px;
   height: 6px;
+
   border-radius: 50%;
 
   background: #59ffb4;
+
   box-shadow: 0 0 10px rgba(89, 255, 180, 0.7);
 
   animation: navbarPulse 1.8s infinite;
@@ -155,18 +230,21 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   gap: 5px;
 
   border: 1px solid rgba(89, 255, 180, 0.18);
   border-radius: 10px;
 
   background: rgba(89, 255, 180, 0.035);
+
   cursor: pointer;
 }
 
 .menu-toggle span {
   width: 15px;
   height: 1px;
+
   background: #59ffb4;
 
   transition:
@@ -186,9 +264,17 @@
   transform: translateY(-6px) rotate(-45deg);
 }
 
+/* ========================================
+   MOBILE MENU
+======================================== */
+
 .mobile-menu {
   display: none;
 }
+
+/* ========================================
+   ANIMATIONS
+======================================== */
 
 @keyframes navbarPulse {
   50% {
@@ -197,13 +283,31 @@
   }
 }
 
-@media (max-width: 900px) {
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+  .navbar-links {
+    gap: 18px;
+  }
+
   .navbar {
     padding: 0 5%;
   }
+}
 
+@media (max-width: 850px) {
   .navbar-links {
-    gap: 16px;
+    gap: 12px;
+  }
+
+  .navbar-links a {
+    font-size: 12px;
+  }
+
+  .identity-panel {
+    min-width: 240px;
   }
 }
 
@@ -211,6 +315,11 @@
   .navbar {
     height: 68px;
     padding: 0 6%;
+  }
+
+  .identity-panel {
+    min-width: auto;
+    height: 68px;
   }
 
   .navbar-links {
@@ -225,8 +334,13 @@
     display: flex;
   }
 
+  .circuit-animation {
+    display: none;
+  }
+
   .mobile-menu {
     position: absolute;
+
     top: calc(100% + 10px);
     left: 6%;
     right: 6%;
@@ -248,6 +362,7 @@
 
     opacity: 0;
     visibility: hidden;
+
     transform: translateY(-8px);
 
     transition:
@@ -279,12 +394,15 @@
 
   .mobile-menu a {
     display: grid;
+
     grid-template-columns: 30px 1fr auto;
+
     align-items: center;
 
     padding: 14px 11px;
 
     color: #91a0aa;
+
     text-decoration: none;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);

@@ -22,7 +22,7 @@ function Hero() {
         </h1>
 
         <p className="hero-description">
-          I'm Moshiur Rahman, a Computer Science student exploring
+          I'm Md. Moshiur Rahman Sajol, a Computer Science student exploring
           Cyber Security, Software Development, and the art of building
           secure digital experiences.
         </p>

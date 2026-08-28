@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import CircuitAnimation from "./CircuitAnimation";
 import "./Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -13,29 +15,55 @@ function Navbar() {
     { label: "Contact", href: "#contact" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY <= 24);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleNavClick = () => {
     setMenuOpen(false);
   };
 
   return (
-    <header className={`navbar ${menuOpen ? "menu-open" : ""}`}>
-      <a
-        href="#home"
-        className="navbar-logo"
-        aria-label="Go to home"
-        onClick={handleNavClick}
-      >
-        <span className="logo-mark">⌬</span>
+    <header
+      className={`navbar ${menuOpen ? "menu-open" : ""} ${
+        isAtTop ? "navbar-top" : "navbar-scrolled"
+      }`}
+    >
+      <div className="identity-panel">
+        <CircuitAnimation active={isAtTop} />
 
-        <span className="logo-text">
-          <span className="logo-name">CAROSINE</span>
-          <span className="logo-sub">/SECURE BY DESIGN</span>
-        </span>
-      </a>
+        <a
+          href="#home"
+          className="navbar-logo"
+          aria-label="Go to home"
+          onClick={handleNavClick}
+        >
+          <span className="logo-mark">⌬</span>
+
+          <span className="logo-text">
+            <span className="logo-name">Md.Moshiur Rahman Sajol</span>
+            <span className="logo-sub">CAROSINE</span>
+          </span>
+        </a>
+      </div>
 
       <nav className="navbar-links">
         {navItems.map((item) => (
-          <a key={item.label} href={item.href} onClick={handleNavClick}>
+          <a
+            key={item.label}
+            href={item.href}
+            onClick={handleNavClick}
+          >
             {item.label}
           </a>
         ))}
